@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Capacitor App</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <script type="module" src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+    <script nomodule src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body>
+    <!-- Fix for iOS navbar gap -->
+    <div class="app-navbar-notch"></div>
+
+    <!-- The custom nav bar, using 2 of the slots -->
+    <custom-navbar
+      ><h1 slot="title">My Capacitor App</h1>
+      <div slot="end">
+        <a href="/info.html"><button>Info</button></a>
+      </div></custom-navbar
+    >
+
+    <div class="app-container">
+      <!-- The captured image -->
+      <img id="image" class="p-4" />
+
+      <!-- Box to upload an image -->
+      <div class="upload-box" id="upload-box">
+        <div class="font-medium text-blue-600" id="image-button">
+          <span>Capture image</span>
+        </div>
+      </div>
+
+      <!--  Input fields -->
+      <div class="m-4">
+        <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+        <textarea id="description" name="description" rows="3" class="description-input" placeholder="Describe your image"></textarea>
+        <button class="button mt-4" id="save">Save Image</button>
+      </div>
+
+      <!-- Custom component with all stored photos -->
+      <my-photos></my-photos>
+    </div>
+
+    <script src="./js/photo-list.js" type="module"></script>
+    <script src="./js/navbar.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

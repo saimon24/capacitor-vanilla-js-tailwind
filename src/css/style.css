@@ -1,0 +1,67 @@
+/* Add Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Fix for iOS area above our custom nav bar */
+.app-navbar-notch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: env(safe-area-inset-top);
+  @apply bg-blue-600;
+}
+
+/* Define a CSS variable that can be used in our nav bar shadow component */
+:root {
+  --nav-bg: theme(colors.blue.600);
+}
+
+/* Make sure we respect the safe area */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Wrap our app content so it'*s not covered by nav bar */
+.app-container {
+  margin-top: 60px;
+}
+
+/* Style our main screeen */
+.upload-box {
+  @apply cursor-pointer m-4 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6;
+}
+
+.description-input {
+  @apply w-full p-2 rounded-md text-gray-900 border-2 border-gray-300 placeholder:text-gray-400;
+}
+
+.button {
+  @apply w-full rounded bg-blue-600 py-3 px-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+}
+
+/* Ugly way of using TailwindCSS in shadow components */
+my-photos::part(list) {
+  @apply m-4;
+}
+
+my-photos::part(btn) {
+  @apply text-center rounded w-auto bg-red-600 py-3 px-2.5 text-sm font-semibold text-white;
+}
+
+my-photos::part(item) {
+  @apply p-4 shadow-xl;
+}
+
+my-photos::part(image) {
+  width: 100%;
+}

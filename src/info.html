@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Capacitor App</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="theme-color" content="#2563eb" />
+  </head>
+  <body>
+    <!-- Fix for iOS navbar gap -->
+    <div class="app-navbar-notch"></div>
+
+    <!-- The custom nav bar, using 2 of the slots -->
+    <custom-navbar
+      ><h1 slot="title">App information</h1>
+      <div slot="start">
+        <a href="/"><button>Back</button></a>
+      </div></custom-navbar
+    >
+
+    <div class="app-container">
+      <div class="m-4">This is my first native app built with <a href="https://capacitorjs.com/" class="text-blue-600">Capacitor</a></div>
+    </div>
+
+    <script src="./js/navbar.js" type="module"></script>
+  </body>
+</html>
