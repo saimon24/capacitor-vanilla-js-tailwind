@@ -1,4 +1,4 @@
-## Created with Capacitor Create App
+## Capacitor App with VanillaJS and TailwindCSS
 
 This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
 and comes with a very minimal shell for building an app.
@@ -10,3 +10,9 @@ To run the provided example, you can use `npm start` command.
 ```bash
 npm start
 ```
+
+## Preview
+
+<img src="./screenshots/1.png" width=30%>
+<img src="./screenshots/2.png" width=30%>
+<img src="./screenshots/3.png" width=30%>
